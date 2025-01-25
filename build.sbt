@@ -12,7 +12,8 @@ lazy val front = project
         .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("front")))
     },
     libraryDependencies ++= Seq(
-      "org.scala-js" %%% "scalajs-dom" % "2.8.0"
+      "org.scala-js" %%% "scalajs-dom" % "2.8.0",
+      "com.raquo" %%% "laminar" % "17.2.0"
     )
   )
 
