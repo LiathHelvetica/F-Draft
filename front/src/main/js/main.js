@@ -1,2 +1,4 @@
-import '@/main/css/style.scss'
+import '@/main/scss/styles.scss'
+// tmp import
+// import * as bootstrap from 'bootstrap'
 import 'scalajs:main.js'
