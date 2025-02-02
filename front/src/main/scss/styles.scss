@@ -18,7 +18,7 @@ $primary: $pink;
 // @import "forms";
 @import "bootstrap/scss/buttons";
 // @import "transitions";
-// @import "dropdown";
+@import "bootstrap/scss/dropdown";
 // @import "button-group";
 @import "bootstrap/scss/nav";
 @import "bootstrap/scss/navbar";
@@ -46,9 +46,25 @@ $primary: $pink;
 
 // @import "bootstrap/scss/bootstrap";
 
-.test {
-    color: red;
+.flex-basis-auto {
+    flex-basis: auto;
 }
-.test {
-    background-color: blue;
+
+.bg-red-team {
+  --bs-bg-opacity: 1;
+  background-color: rgba($red, var(--bs-bg-opacity)) !important;
+}
+
+.bg-blue-team {
+  --bs-bg-opacity: 1;
+  background-color: rgba($blue, var(--bs-bg-opacity)) !important;
+}
+
+// TODO: wonder if this will turn out to be problematic
+#app {
+    height: 100vh;
+}
+
+.draft-view-row {
+    height: 100%;
 }
