@@ -45,9 +45,28 @@ object DraftView {
         cls := "col d-flex flex-column",
         div(
           cls := "d-flex",
-          div(cls := "flex-grow-1 bg-blue-team"),
+          div(
+            cls := "flex-grow-1 progress",
+            role := "progressbar",
+            aria.label := "Blue team time left",
+            // TODO: dynamic valuemax, valuenow, label
+            aria.valueMin := 0,
+            div(
+              cls := "progress-bar bg-blue-team",
+              styleAttr := "width: 25%"
+            )
+          ),
           div(99),
-          div(cls := "flex-grow-1 bg-red-team")
+          div(
+            cls := "flex-grow-1 progress",
+            role := "progressbar",
+            aria.label := "Red team time left",
+            aria.valueMin := 0,
+            div(
+              cls := "progress-bar bg-red-team",
+              styleAttr := "width: 75%"
+            )
+          )
         ),
         div(
           cls := "d-flex",
@@ -71,6 +90,17 @@ object DraftView {
               li(cls := "dropdown-item", "Option 1"),
               li(cls := "dropdown-item", "Option 2"),
               li(cls := "dropdown-item", "Option 3")
+            )
+          ),
+          div(
+            cls := "input-group search-champion-input",
+            span(cls := "input-group-text", "$"),
+            input(
+              tpe := "text",
+              cls := "form-control",
+              placeholder := "Search",
+              aria.label := "Search",
+              size := 20
             )
           )
         )

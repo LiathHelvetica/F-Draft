@@ -15,7 +15,7 @@ $primary: $pink;
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
 // @import "tables";
-// @import "forms";
+@import "bootstrap/scss/forms";
 @import "bootstrap/scss/buttons";
 // @import "transitions";
 @import "bootstrap/scss/dropdown";
@@ -28,7 +28,7 @@ $primary: $pink;
 // @import "bootstrap/scss/pagination";
 // @import "badge";
 // @import "alert";
-// @import "progress";
+@import "bootstrap/scss/progress";
 // @import "list-group";
 // @import "close";
 // @import "toasts";
@@ -67,4 +67,7 @@ $primary: $pink;
 
 .draft-view-row {
     height: 100%;
+}
+.search-champion-input {
+    width: unset;    
 }
