@@ -8,12 +8,11 @@ import scala.scalajs.js.annotation.*
 
 object DraftView {
 
-  def element: Element = div(
-    cls := "container-fluid flex-grow-1 flex-shrink-1 flex-basis-auto",
+  def element: Element =
     div(
-      cls := "row draft-view-row",
+      cls := "d-flex flex-grow-1 flex-shrink-1 flex-basis-auto draft-view-row",
       div(
-        cls := "col-3 d-flex flex-column",
+        cls := "d-flex flex-column flex-grow-1",
         div(
           "Blue team"
         ),
@@ -106,8 +105,34 @@ object DraftView {
         )
       ),
       div(
-        cls := "col-3"
+        cls := "d-flex flex-column flex-grow-1",
+        div(
+          "Blue team"
+        ),
+        div(
+          "b1 b2 b3 b4 b5"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P1"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P2"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P3"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P4"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P5"
+        )
       )
     )
-  )
+
 }
