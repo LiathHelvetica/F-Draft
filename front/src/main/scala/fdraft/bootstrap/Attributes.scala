@@ -1,4 +1,4 @@
-package bootstrap
+package fdraft.bootstrap
 
 import com.raquo.laminar.api.L.htmlAttr
 import com.raquo.laminar.codecs.StringAsIsCodec

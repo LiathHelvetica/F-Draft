@@ -1,9 +1,9 @@
-package view
-
-import bootstrap.Attributes.*
-import scala.scalajs.js
+package fdraft.view
 
 import com.raquo.laminar.api.L.{*, given}
+import fdraft.bootstrap.Attributes.*
+
+import scala.scalajs.js
 import scala.scalajs.js.annotation.*
 
 object DraftView {

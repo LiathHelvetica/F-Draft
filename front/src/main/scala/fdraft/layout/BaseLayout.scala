@@ -1,4 +1,4 @@
-package layout
+package fdraft.layout
 
 import com.raquo.laminar.api.L.{*, given}
 

@@ -5,8 +5,17 @@ ThisBuild / scalaVersion := "3.6.2"
 
 def projectWithShared(p: Project): Project = p.dependsOn(shared).aggregate(shared)
 
+lazy val commonSettings = Seq(
+  organization := "fdraft",
+  scalacOptions ++= Seq(
+    "-unchecked",
+    "-Xfatal-warnings"
+  )
+)
+
 lazy val front = projectWithShared(project)
   .enablePlugins(ScalaJSPlugin)
+  .settings(commonSettings *)
   .settings(
     name := "f-draft-front",
     scalaJSUseMainModuleInitializer := true,
@@ -24,6 +33,7 @@ lazy val front = projectWithShared(project)
   )
 
 lazy val back = projectWithShared(project)
+  .settings(commonSettings *)
   .settings(
     name := "f-draft-back",
     libraryDependencies ++= Seq(
@@ -32,6 +42,11 @@ lazy val back = projectWithShared(project)
   )
 
 lazy val shared = project
+  .settings(commonSettings *)
   .settings(
-    name := "f-draft-shared"
+    name := "f-draft-shared",
+    libraryDependencies ++= Seq(
+      "com.lihaoyi" %% "upickle" % "4.1.0",
+      "com.lihaoyi" %% "ujson" % "4.1.0"
+    )
   )

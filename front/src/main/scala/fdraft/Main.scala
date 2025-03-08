@@ -1,7 +1,9 @@
+package fdraft
+
 import com.raquo.laminar.api.L.{*, given}
-import layout.BaseLayout
+import fdraft.layout.BaseLayout
+import fdraft.view.DraftView
 import org.scalajs.dom
-import view.DraftView
 
 object Main extends App {
   // TODO: maybe Nuxt-esque layout (layout has injectable element) is the way to go. Investigate when exploring routing
