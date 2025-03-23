@@ -179,4 +179,6 @@ object ChampionBasicInfo {
     case Zoe          => ChampionBasicInfo(Zoe, "Zoe", Set(Mage))
     case Zyra         => ChampionBasicInfo(Zyra, "Zyra", Set(Mage, Support))
   }
+  
+  val all: List[ChampionBasicInfo] = ChampionId.values.toList.map(ChampionBasicInfo.apply)
 }

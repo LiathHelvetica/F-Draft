@@ -3,19 +3,22 @@ import org.scalajs.linker.interface.ModuleSplitStyle
 ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "3.6.2"
 
-def projectWithShared(p: Project): Project = p.dependsOn(shared).aggregate(shared)
+lazy val organizationSettings = Seq(
+  organization := "fdraft"
+)
 
-lazy val commonSettings = Seq(
-  organization := "fdraft",
+lazy val commonJvmSettings = Seq(
   scalacOptions ++= Seq(
     "-unchecked",
     "-Xfatal-warnings"
   )
 )
 
-lazy val front = projectWithShared(project)
+lazy val front = project
   .enablePlugins(ScalaJSPlugin)
-  .settings(commonSettings *)
+  .dependsOn(shared.js)
+  .aggregate(shared.js)
+  .settings(organizationSettings *)
   .settings(
     name := "f-draft-front",
     scalaJSUseMainModuleInitializer := true,
@@ -32,8 +35,11 @@ lazy val front = projectWithShared(project)
     )
   )
 
-lazy val back = projectWithShared(project)
-  .settings(commonSettings *)
+lazy val back = project
+  .dependsOn(shared.jvm)
+  .aggregate(shared.jvm)
+  .settings(organizationSettings *)
+  .settings(commonJvmSettings *)
   .settings(
     name := "f-draft-back",
     libraryDependencies ++= Seq(
@@ -41,12 +47,17 @@ lazy val back = projectWithShared(project)
     )
   )
 
-lazy val shared = project
-  .settings(commonSettings *)
+lazy val shared = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Pure)
+  .settings(organizationSettings *)
   .settings(
     name := "f-draft-shared",
     libraryDependencies ++= Seq(
-      "com.lihaoyi" %% "upickle" % "4.1.0",
-      "com.lihaoyi" %% "ujson" % "4.1.0"
+      "com.lihaoyi" %%% "upickle" % "4.1.0",
+      "com.lihaoyi" %%% "ujson" % "4.1.0"
     )
+  )
+  .jvmSettings(commonJvmSettings *)
+  .jvmSettings(
+    libraryDependencies += "org.scala-js" %% "scalajs-stubs" % "1.1.0" % "provided"
   )

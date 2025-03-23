@@ -1,5 +1,8 @@
 package fdraft
 
+import scala.scalajs.js.annotation.*
+
+@JSExportAll
 enum ChampionId(val id: String) {
   case Aatrox extends ChampionId("Aatrox")
   case Ahri extends ChampionId("Ahri")
