@@ -15,8 +15,9 @@ object Main extends App {
       for {
         (key, champ) <- championData.obj
       } yield println(
-        f"case ${champ("id").str} => ChampionBasicInfo(${champ("id").str}, ${champ("name")}, Set(${champ("tags").arr.toSeq.map(_.str).mkString(", ")}))"
+        f"case ${champ("id").str} => new ChampionIcon(${champ("id").str}, aatroxIcon)"
       )
   })
+
 
 }

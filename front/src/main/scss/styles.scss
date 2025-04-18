@@ -40,7 +40,7 @@ $primary: $pink;
 // @import "offcanvas";
 // @import "placeholders";
 
-// @import "bootstrap/scss/helpers";
+@import "bootstrap/scss/helpers";
 
 @import "bootstrap/scss/utilities/api";
 
@@ -68,6 +68,23 @@ $primary: $pink;
 .draft-view-row {
     height: 100%;
 }
+
+.draft-view-section {
+  height: 100%;
+}
+
+.draft-team-column {
+  width: 20%;
+}
+
+.draft-champ-select-column {
+  width: 60%;
+}
+
 .search-champion-input {
     width: unset;    
+}
+
+.champion-icon {
+  width: 16.66%;
 }
