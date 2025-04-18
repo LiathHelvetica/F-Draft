@@ -14,10 +14,15 @@ lazy val commonJvmSettings = Seq(
   )
 )
 
+lazy val root = project.in(file("."))
+  .settings(
+    name := "f-draft-root",
+  )
+  .aggregate(front, back)
+
 lazy val front = project
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(shared.js)
-  .aggregate(shared.js)
   .settings(organizationSettings *)
   .settings(
     name := "f-draft-front",
@@ -37,7 +42,6 @@ lazy val front = project
 
 lazy val back = project
   .dependsOn(shared.jvm)
-  .aggregate(shared.jvm)
   .settings(organizationSettings *)
   .settings(commonJvmSettings *)
   .settings(
