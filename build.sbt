@@ -34,6 +34,7 @@ lazy val front = project
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "2.8.0",
       "com.raquo" %%% "laminar" % "17.2.0",
+      "com.raquo" %%% "waypoint" % "9.0.0",
       "io.circe" %%% "circe-core" % "0.14.10",
       "io.circe" %%% "circe-generic" % "0.14.10",
       "io.circe" %%% "circe-parser" % "0.14.10"
@@ -47,7 +48,7 @@ lazy val back = project
   .settings(
     name := "f-draft-back",
     libraryDependencies ++= Seq(
-      "com.softwaremill.sttp.tapir" %% "tapir-core" % "1.11.11"
+      "com.softwaremill.sttp.tapir" %% "tapir-core" % "1.11.40"
     )
   )
 

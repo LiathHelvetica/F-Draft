@@ -27,58 +27,42 @@ object DraftView {
     EventStream.fromValue(ChampionIcon.all).split(_.id)(renderChampIcon)
 
   def element: Element =
-    mainTag(
       role := "main",
-      cls := "container",
-      // cls := "d-flex draft-view-row", // flex-grow-1 flex-shrink-1 flex-basis-auto
-      div("qwe1"),
-      div("qwe2"),
-      div("qwe3"),
-      div("qwe4"),
-      div("qwe5"),
-      div("qwe6"),
-      div("qwe7"),
-      div("qwe8"),
-      div("qwe9"),
-      div("qwe10"),
-
-
-      /*div(
-        cls := "draft-team-column",
+      cls := "d-flex flex-grow-1",
+      styleAttr := "height: 1px",
+      div(
+        cls := "d-flex flex-column draft-team-column",
         div(
-          cls := "d-flex flex-column draft-view-section",
-          div(
-            "Blue team"
-          ),
-          div(
-            "b1 b2 b3 b4 b5"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P1"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P2"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P3"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P4"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P5"
-          )
+          "Blue team"
+        ),
+        div(
+          "b1 b2 b3 b4 b5"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P1"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P2"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P3"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P4"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P5"
         )
       ),
       div(
-        cls := "draft-champ-select-column",
+        cls := "d-flex flex-column draft-champ-select-column",
         div(
-          cls := "d-flex flex-column flex-grow-1 draft-view-section",
+          cls := "flex-grow-0",
           div(
             cls := "d-flex",
             div(
@@ -139,45 +123,42 @@ object DraftView {
                 size := 20
               )
             )
-          ),
-          div(
-            cls := "d-flex flex-wrap",
-            children <-- championsInView
           )
+        ),
+        div(
+          cls := "d-flex flex-wrap flex-grow-1 align-content-start draft-champ-select-list",
+          children <-- championsInView
         )
       ),
       div(
-        cls := "draft-team-column",
+        cls := "d-flex flex-column draft-team-column",
         div(
-          cls := "d-flex flex-column draft-view-section",
-          div(
-            "Red team"
-          ),
-          div(
-            "b1 b2 b3 b4 b5"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P1"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P2"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P3"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P4"
-          ),
-          div(
-            cls := "flex-grow-1",
-            "P5"
-          )
+          "Red team"
+        ),
+        div(
+          "b1 b2 b3 b4 b5"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P1"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P2"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P3"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P4"
+        ),
+        div(
+          cls := "flex-grow-1",
+          "P5"
         )
-      )*/
+      )
     )
 
 }

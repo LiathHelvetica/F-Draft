@@ -47,7 +47,7 @@ $primary: $pink;
 // @import "bootstrap/scss/bootstrap";
 
 .flex-basis-auto {
-    flex-basis: auto;
+  flex-basis: auto;
 }
 
 .bg-red-team {
@@ -60,16 +60,13 @@ $primary: $pink;
   background-color: rgba($blue, var(--bs-bg-opacity)) !important;
 }
 
-// TODO: wonder if this will turn out to be problematic
 #app {
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.draft-view-row {
-    height: 100%;
-}
-
-.draft-view-section {
+html {
   height: 100%;
 }
 
@@ -81,8 +78,12 @@ $primary: $pink;
   width: 60%;
 }
 
+.draft-champ-select-list {
+  overflow-y: auto;
+}
+
 .search-champion-input {
-    width: unset;    
+  width: unset;
 }
 
 .champion-icon {
