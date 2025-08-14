@@ -27,6 +27,7 @@ object DraftView {
     EventStream.fromValue(ChampionIcon.all).split(_.id)(renderChampIcon)
 
   def element: Element =
+    mainTag(
       role := "main",
       cls := "d-flex flex-grow-1",
       styleAttr := "height: 1px",
