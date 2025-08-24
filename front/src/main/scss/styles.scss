@@ -52,12 +52,12 @@ $primary: $pink;
 
 .bg-red-team {
   --bs-bg-opacity: 1;
-  background-color: rgba($red, var(--bs-bg-opacity)) !important;
+  background-color: rgba($red, var(--bs-bg-opacity));
 }
 
 .bg-blue-team {
   --bs-bg-opacity: 1;
-  background-color: rgba($blue, var(--bs-bg-opacity)) !important;
+  background-color: rgba($blue, var(--bs-bg-opacity));
 }
 
 #app {
